@@ -1164,6 +1164,7 @@ abstract class PrettyPrinterAbstract
             ],
             Expr\Ternary::class => [
                 'cond' => self::FIXUP_PREC_LEFT,
+                'if'   => self::FIXUP_CALL_LHS,
                 'else' => self::FIXUP_PREC_RIGHT,
             ],
 

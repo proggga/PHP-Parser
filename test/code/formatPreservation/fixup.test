@@ -15,7 +15,6 @@ $stmts[0]->expr->left = new Expr\BinaryOp\Plus(new Expr\Variable('a'), new Expr\
 $stmts[1]->expr->right = new Expr\BinaryOp\Plus(new Expr\Variable('b'), new Expr\Variable('c'));
 // No parens necessary
 $stmts[2]->expr->left = new Expr\BinaryOp\Plus(new Expr\Variable('a'), new Expr\Variable('b'));
-// Parens for RHS not strictly necessary due to assign speciality
 $stmts[3]->expr->cond = new Expr\Assign(new Expr\Variable('a'), new Expr\Variable('b'));
 $stmts[3]->expr->if = new Expr\Assign(new Expr\Variable('a'), new Expr\Variable('b'));
 $stmts[3]->expr->else = new Expr\Assign(new Expr\Variable('a'), new Expr\Variable('b'));
@@ -27,7 +26,7 @@ $stmts[5]->expr->left = new Expr\BinaryOp\Plus(new Expr\Variable('a'), new Expr\
 ($a + $b)  *  $c;
 $a  +  ($b + $c);
 $a + $b  +  $c;
-($a = $b)  ?  $a = $b  :  ($a = $b);
+($a = $b)  ?  ($a = $b)  :  ($a = $b);
 ($a + $b)  *  $c;
 ( $a + $b )  *  $c;
 !$a = $b;
